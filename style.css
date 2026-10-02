@@ -1,0 +1,55 @@
+/* ===== CSS3 SELECTORS ===== */
+
+/* 1. Element selector */
+body { background-color: #f4f6f9; }
+h2 { color: #0d6efd; margin-bottom: 20px; }
+
+/* 2. Class selector */
+.hero { background-color: #0d6efd; color: white; padding: 60px 0; }
+
+/* 3. ID selector */
+#message { margin-top: 15px; }
+
+/* 4. Descendant selector (h1 inside .hero) */
+.hero h1 { font-size: 40px; margin-bottom: 15px; }
+
+/* 5. Child selector (only direct children) */
+.features > li { margin-bottom: 5px; }
+
+/* 6. Pseudo-element (adds text before each list item) */
+.features { list-style: none; padding: 0; }
+.features li::before { content: "> "; }
+
+/* 7. Pseudo-classes */
+.features li:first-child { font-weight: bold; }
+.card { transition: box-shadow 0.3s; }
+.card:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); }
+
+/* 8. Attribute selector */
+input[type="file"] { border: 2px dashed #0d6efd; }
+
+/* ===== SPECIFICITY =====
+   All 3 rules below select the job title. The most specific rule wins.
+   .job-title                -> 1 class            (low)
+   .card .job-title          -> 2 classes          (medium)
+   #jobList .card .job-title -> 1 id + 2 classes   (highest, so dark blue wins)
+   I did not use !important anywhere. */
+.job-title { color: #333; font-size: 20px; }
+.card .job-title { color: #0d6efd; }
+#jobList .card .job-title { color: darkblue; }
+
+/* Job description is hidden first, jQuery shows it */
+.job-details {
+  display: none;
+  margin: 10px 0;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+}
